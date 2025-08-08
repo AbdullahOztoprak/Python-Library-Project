@@ -1,178 +1,161 @@
-# 📚 Library Management System
 
-A comprehensive library management system built as part of the Global AI Hub Python 202 Bootcamp. This project demonstrates Object-Oriented Programming (OOP), external API integration, and FastAPI web service development.
 
-## 🎯 Project Overview
+# Library Management System
 
-This project is built in three progressive stages:
+This is a personal hobby project for organizing and exploring your book collection. It uses Python, OOP, external API integration, and FastAPI. I built it for fun and to learn new things.
 
-1. **Stage 1**: OOP-based console application with persistent data storage
-2. **Stage 2**: Integration with Open Library API for automatic book data retrieval
-3. **Stage 3**: RESTful web API using FastAPI with interactive documentation
 
-## ✨ Features
+## Project Overview
 
-### Core Features
-- ✅ Add books to library (manually or by ISBN)
-- ✅ Remove books from library
-- ✅ List all books in library
-- ✅ Search for specific books by ISBN
-- ✅ Persistent data storage using JSON
-- ✅ Automatic book data fetching from Open Library API
-- ✅ RESTful API with FastAPI
-- ✅ Interactive API documentation
-- ✅ Comprehensive test suite
+The project has three main parts:
+1. Console Application: Terminal app with persistent data storage
+2. API Integration: Fetch book details automatically from Open Library API
+3. Web API: RESTful API using FastAPI
 
-### Technical Features
-- 🔧 Object-Oriented Programming principles
-- 🌐 HTTP client integration with `httpx`
-- 📡 RESTful API with proper HTTP status codes
-- 📝 Pydantic data validation
-- 🧪 Comprehensive testing with pytest
-- 📚 Automatic API documentation with Swagger UI
-- 🔄 Error handling and graceful degradation
 
-## 🚀 Quick Start
+## Features
+
+- Add books to your library (manually or by ISBN)
+- Remove books
+- List all books
+- Search for books by ISBN
+- Persistent data storage (JSON)
+- Automatic book data fetching from Open Library API
+- RESTful API with FastAPI
+- Interactive API documentation
+- Test suite with pytest
+
+
+## Getting Started
 
 ### Prerequisites
 - Python 3.8 or higher
-- pip (Python package manager)
+- pip
 
 ### Installation
+Clone the repository:
+```bash
+git clone https://github.com/AbdullahOztoprak/Global-AI-Hub-Python-202-Bootcamp-Project.git
+cd Global-AI-Hub-Python-202-Bootcamp-Project
+```
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/AbdullahOztoprak/Global-AI-Hub-Python-202-Bootcamp-Project.git
-   cd Global-AI-Hub-Python-202-Bootcamp-Project
-   ```
-
-2. **Install dependencies**
-   ```bash
-   pip install -r requirements.txt
-   ```
+Install dependencies:
+```bash
+pip install -r requirements.txt
+```
 
 ### Usage
 
-#### Console Application (Stages 1 & 2)
-Run the interactive console application:
+#### Console Application
+Run the console app:
 ```bash
 python main.py
 ```
 
-**Menu Options:**
-1. Add Book (by ISBN) - Fetches book details automatically from Open Library
-2. Add Book (Manual) - Manually enter book details
-3. Remove Book - Remove a book by ISBN
-4. List All Books - Display all books in the library
-5. Search Book - Find a book by ISBN
-6. Library Statistics - View library statistics
+Menu:
+1. Add Book (by ISBN)
+2. Add Book (Manual)
+3. Remove Book
+4. List All Books
+5. Search Book
+6. Library Statistics
 0. Exit
 
-#### Web API (Stage 3)
+#### Web API
 Start the FastAPI server:
 ```bash
 uvicorn api:app --reload
 ```
 
-The API will be available at:
-- **Main API**: http://localhost:8000
-- **Interactive Documentation**: http://localhost:8000/docs
-- **Alternative Documentation**: http://localhost:8000/redoc
+API endpoints:
+- Main: http://localhost:8000
+- Docs: http://localhost:8000/docs
+- Redoc: http://localhost:8000/redoc
 
-## 📡 API Endpoints
 
-### Books Management
+## API Endpoints
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/books` | Get all books in the library |
-| POST | `/books` | Add a new book by ISBN |
-| GET | `/books/{isbn}` | Get a specific book by ISBN |
-| DELETE | `/books/{isbn}` | Remove a book by ISBN |
+Books:
+- GET `/books`: List all books
+- POST `/books`: Add a new book by ISBN
+- GET `/books/{isbn}`: Get a specific book by ISBN
+- DELETE `/books/{isbn}`: Remove a book by ISBN
 
-### Additional Endpoints
+Other:
+- GET `/`: API info
+- GET `/health`: Health check
+- GET `/stats`: Library statistics
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/` | API information |
-| GET | `/health` | Health check |
-| GET | `/stats` | Library statistics |
-
-### Example API Usage
-
-**Add a book by ISBN:**
+Example usage:
+Add a book by ISBN:
 ```bash
-curl -X POST "http://localhost:8000/books" \
-     -H "Content-Type: application/json" \
-     -d '{"isbn": "978-0451524935"}'
+curl -X POST "http://localhost:8000/books" -H "Content-Type: application/json" -d '{"isbn": "978-0451524935"}'
 ```
-
-**Get all books:**
+Get all books:
 ```bash
 curl -X GET "http://localhost:8000/books"
 ```
-
-**Remove a book:**
+Remove a book:
 ```bash
 curl -X DELETE "http://localhost:8000/books/978-0451524935"
 ```
 
-## 🧪 Testing
 
-Run the comprehensive test suite:
+## Testing
 
+Run all tests:
 ```bash
-# Run all tests
 pytest
-
-# Run specific test files
-pytest tests/test_stage1.py  # Basic OOP functionality
-pytest tests/test_stage2.py  # API integration
-pytest tests/test_stage3.py  # FastAPI endpoints
-
-# Run with coverage
+```
+Run specific tests:
+```bash
+pytest tests/test_stage1.py
+pytest tests/test_stage2.py
+pytest tests/test_stage3.py
+```
+Run with coverage:
+```bash
 pytest --cov=models --cov=api
-
-# Run with verbose output
-pytest -v
 ```
 
-## 📁 Project Structure
+
+## Project Structure
 
 ```
 Global-AI-Hub-Python-202-Bootcamp-Project/
 ├── models/
-│   ├── __init__.py          # Package initialization
-│   ├── book.py              # Book class definition
-│   └── library.py           # Library class with API integration
+│   ├── __init__.py
+│   ├── book.py
+│   └── library.py
 ├── tests/
-│   ├── test_stage1.py       # Tests for basic OOP functionality
-│   ├── test_stage2.py       # Tests for API integration
-│   └── test_stage3.py       # Tests for FastAPI endpoints
-├── main.py                  # Console application entry point
-├── api.py                   # FastAPI web application
-├── requirements.txt         # Project dependencies
-├── library.json            # Data storage file (created automatically)
-└── README.md               # Project documentation
+│   ├── test_stage1.py
+│   ├── test_stage2.py
+│   └── test_stage3.py
+├── main.py
+├── api.py
+├── requirements.txt
+├── library.json
+└── README.md
 ```
 
-## 🔧 Dependencies
 
-- **httpx**: HTTP client for API requests
-- **fastapi**: Modern web framework for building APIs
-- **uvicorn**: ASGI server for running FastAPI
-- **pytest**: Testing framework
-- **pydantic**: Data validation using Python type annotations
+## Dependencies
 
-## 📚 API Documentation
+- httpx: HTTP client for API requests
+- fastapi: Web framework for building APIs
+- uvicorn: ASGI server for FastAPI
+- pytest: Testing framework
+- pydantic: Data validation
+
+
+## API Documentation
 
 The project uses Open Library API for fetching book information:
-- **API Base URL**: https://openlibrary.org
-- **Book Endpoint**: `/isbn/{isbn}.json`
-- **Author Endpoint**: `/authors/{author_key}.json`
+- API Base URL: https://openlibrary.org
+- Book Endpoint: `/isbn/{isbn}.json`
+- Author Endpoint: `/authors/{author_key}.json`
 
-### Sample Book Data
-When you add a book by ISBN "978-0451524935", the system will fetch:
+Example book data:
 ```json
 {
   "title": "1984",
@@ -181,81 +164,47 @@ When you add a book by ISBN "978-0451524935", the system will fetch:
 }
 ```
 
-## 🛠️ Development
 
-### Running in Development Mode
+## Development
 
-1. **Console Application with Auto-reload:**
-   ```bash
-   python main.py
-   ```
+To run in development mode:
+```bash
+python main.py
+uvicorn api:app --reload --host 0.0.0.0 --port 8000
+```
 
-2. **API Server with Auto-reload:**
-   ```bash
-   uvicorn api:app --reload --host 0.0.0.0 --port 8000
-   ```
+To add new features:
+- Add new Book properties in `models/book.py`
+- Add new Library methods in `models/library.py`
+- Add new API endpoints in `api.py`
+- Add tests in the `tests/` directory
 
-### Adding New Features
 
-The project is designed to be easily extensible:
 
-1. **Add new Book properties**: Modify the `Book` class in `models/book.py`
-2. **Add new Library methods**: Extend the `Library` class in `models/library.py`
-3. **Add new API endpoints**: Add new routes in `api.py`
-4. **Add tests**: Create corresponding test files in the `tests/` directory
+## Why This Project?
 
-## 🎓 Learning Objectives
+I wanted a simple way to organize my books, learn new Python libraries, and experiment with API development. This project is a result of that curiosity.
 
-This project demonstrates:
 
-1. **Object-Oriented Programming**:
-   - Class design and implementation
-   - Encapsulation and data hiding
-   - Method implementation and override
+## Contributing
 
-2. **External API Integration**:
-   - HTTP client usage
-   - JSON data processing
-   - Error handling and retry logic
+Feel free to fork the repository, open issues, or submit pull requests. Suggestions and improvements are welcome.
 
-3. **Web API Development**:
-   - RESTful API design
-   - HTTP status codes
-   - Request/response models
-   - API documentation
 
-4. **Testing**:
-   - Unit testing
-   - Mocking external dependencies
-   - Test coverage
 
-5. **Best Practices**:
-   - Code organization
-   - Documentation
-   - Error handling
-   - Data validation
+## License
 
-## 🤝 Contributing
+This project is open source and free to use for any personal or educational purpose.
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/new-feature`)
-3. Make your changes
-4. Add tests for new functionality
-5. Commit your changes (`git commit -am 'Add new feature'`)
-6. Push to the branch (`git push origin feature/new-feature`)
-7. Create a Pull Request
 
-## 📄 License
 
-This project is created for educational purposes as part of the Global AI Hub Python 202 Bootcamp.
+## Author
 
-## 👤 Author
+Abdullah Öztoprak
+GitHub: [@AbdullahOztoprak](https://github.com/AbdullahOztoprak)
 
-**Abdullah Öztoprak**
-- GitHub: [@AbdullahOztoprak](https://github.com/AbdullahOztoprak)
 
-## 🙏 Acknowledgments
 
-- Global AI Hub for the comprehensive Python 202 Bootcamp
-- Open Library for providing the free book data API
-- FastAPI team for the excellent web framework documentation
+## Acknowledgments
+
+Thanks to Open Library for the free book data API and FastAPI for the great documentation.
