@@ -1,8 +1,9 @@
-# 🎓 Project Implementation Steps & Progress
 
-## ✅ Completed Tasks
+# Project Progress and Implementation Steps
 
-### Stage 1: OOP Terminal Library Application
+## Completed Tasks
+
+### Console Application: OOP Terminal Library
 - [x] **Book Class (`models/book.py`)**
   - [x] Title, author, and ISBN attributes
   - [x] `__str__` method for readable output
@@ -20,7 +21,7 @@
 
 - [x] **Main Application (`main.py`)**
   - [x] Interactive menu system
-  - [x] User-friendly interface with emojis
+  - [x] User-friendly interface
   - [x] Error handling and input validation
   - [x] Statistics display
 
@@ -29,7 +30,7 @@
   - [x] Complete test coverage for Library class
   - [x] Temporary file handling for tests
 
-### Stage 2: External API Integration
+### API Integration: Open Library
 - [x] **Dependencies (`requirements.txt`)**
   - [x] httpx for HTTP client
   - [x] All required packages listed
@@ -52,7 +53,7 @@
   - [x] Error scenario testing
   - [x] Network failure handling tests
 
-### Stage 3: FastAPI Web Service
+### Web API: FastAPI Service
 - [x] **FastAPI Application (`api.py`)**
   - [x] `GET /books` - List all books
   - [x] `POST /books` - Add book by ISBN
@@ -98,98 +99,60 @@
   - [x] Startup scripts for Linux/Mac (`start.sh`)
   - [x] Configuration file (`config.py`)
 
-## 🎯 Project Requirements Compliance
 
-### General Requirements ✅
-- [x] Public GitHub repository
-- [x] Detailed README.md with setup instructions
-- [x] Python code in .py files
-- [x] All functionality working as specified
+## How to Run the Project
 
-### Stage 1 Requirements ✅
-- [x] Book class with title, author, ISBN
-- [x] `__str__` method implementation
-- [x] Library class with all required methods
-- [x] JSON data persistence (library.json)
-- [x] Console application with menu
-- [x] Pytest tests
+You can use the startup script or run commands manually.
 
-### Stage 2 Requirements ✅
-- [x] httpx library integration
-- [x] requirements.txt file
-- [x] Open Library API integration
-- [x] ISBN-based book addition
-- [x] Error handling for API failures
-- [x] Pytest tests for API functionality
-
-### Stage 3 Requirements ✅
-- [x] FastAPI and uvicorn installation
-- [x] api.py file created
-- [x] All required endpoints implemented
-- [x] Pydantic models for data validation
-- [x] Interactive documentation at /docs
-- [x] Pytest tests for API endpoints
-
-## 🚀 How to Run the Project
-
-### Option 1: Use the Startup Script (Recommended)
 **Windows:**
-```bash
-start.bat
-```
+    start.bat
 
 **Linux/Mac:**
-```bash
-./start.sh
-```
+    ./start.sh
 
-### Option 2: Manual Commands
+Or run manually:
 
-**Console Application:**
-```bash
-python main.py
-```
+Console Application:
+    python main.py
 
-**Web API:**
-```bash
-uvicorn api:app --reload
-```
+Web API:
+    uvicorn api:app --reload
 
-**Tests:**
-```bash
-pytest -v
-```
+Tests:
+    pytest -v
 
-## 📊 Test Coverage
 
-Run tests with coverage report:
-```bash
-pytest --cov=models --cov=api --cov-report=html
-```
+## Test Coverage
 
-## 🎉 Project Success Criteria
+To see coverage, run:
+    pytest --cov=models --cov=api --cov-report=html
 
-### ✅ All criteria met:
-1. **Code Quality**: Well-structured, documented, and tested
-2. **Functionality**: All required features implemented
-3. **Error Handling**: Robust error handling throughout
-4. **Testing**: Comprehensive test suite with good coverage
-5. **Documentation**: Clear and detailed documentation
-6. **User Experience**: Intuitive interfaces for both console and web
-7. **Best Practices**: Following Python and API development best practices
 
-## 🏆 Bonus Features Implemented
+## Project Success Criteria
 
-- ✅ Enhanced error handling and user feedback
-- ✅ Library statistics and analytics
-- ✅ Health check endpoint for API
-- ✅ Interactive startup scripts
-- ✅ Comprehensive documentation
-- ✅ Multiple author support
-- ✅ Configuration management
-- ✅ Professional project structure
+All criteria met:
+1. Code Quality: Well-structured, documented, and tested
+2. Functionality: All required features implemented
+3. Error Handling: Robust error handling throughout
+4. Testing: Comprehensive test suite with good coverage
+5. Documentation: Clear and detailed documentation
+6. User Experience: Intuitive interfaces for both console and web
+7. Best Practices: Following Python and API development best practices
 
-## 📝 Next Steps (Optional Enhancements)
+
+## Bonus Features Implemented
+
+- Enhanced error handling and user feedback
+- Library statistics and analytics
+- Health check endpoint for API
+- Interactive startup scripts
+- Comprehensive documentation
+- Multiple author support
+- Configuration management
+- Professional project structure
+
+
+## Next Steps (Optional Enhancements)
 
 For future development, consider:
 - [ ] SQLite database integration
