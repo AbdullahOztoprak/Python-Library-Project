@@ -2,7 +2,7 @@
 
 # Library Management System
 
-This is a personal hobby project for organizing and exploring your book collection. It uses Python, OOP, external API integration, and FastAPI. I built it for fun and to learn new things.
+This is a personal hobby project for organizing and exploring your book collection. It uses Python, OOP, external API integration and FastAPI. I built it for fun and to learn new things.
 
 
 ## Project Overview
@@ -35,8 +35,7 @@ The project has three main parts:
 ### Installation
 Clone the repository:
 ```bash
-git clone https://github.com/AbdullahOztoprak/Global-AI-Hub-Python-202-Bootcamp-Project.git
-cd Global-AI-Hub-Python-202-Bootcamp-Project
+git clone https://github.com/AbdullahOztoprak/Python-Library-Project.git
 ```
 
 Install dependencies:
@@ -122,7 +121,7 @@ pytest --cov=models --cov=api
 ## Project Structure
 
 ```
-Global-AI-Hub-Python-202-Bootcamp-Project/
+Python-Library-Project/
 ├── models/
 │   ├── __init__.py
 │   ├── book.py
@@ -191,20 +190,12 @@ I wanted a simple way to organize my books, learn new Python libraries, and expe
 Feel free to fork the repository, open issues, or submit pull requests. Suggestions and improvements are welcome.
 
 
-
 ## License
 
 This project is open source and free to use for any personal or educational purpose.
-
-
 
 ## Author
 
 Abdullah Öztoprak
 GitHub: [@AbdullahOztoprak](https://github.com/AbdullahOztoprak)
 
-
-
-## Acknowledgments
-
-Thanks to Open Library for the free book data API and FastAPI for the great documentation.
